@@ -9,23 +9,23 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './roles.component.css'
 })
 export class RolesComponent {
-firstname:string = "John";
-lastname:string = "Doe";
-age:number = 20;
-isStudent:boolean = true;
-isEmployee:boolean = false;
-isAdmin:boolean = false;
-isSuperAdmin:boolean = false;
-isUser:boolean = false;
-selectstate:string = '';
+// firstname:string = "John";
+// lastname:string = "Doe";
+// age:number = 20;
+// isStudent:boolean = true;
+// isEmployee:boolean = false;
+// isAdmin:boolean = false;
+// isSuperAdmin:boolean = false;
+// isUser:boolean = false;
+// selectstate:string = '';
+
+// showelcomeAlert(){
+//   alert("Welcome to Angular");
+// }
+
+// showmessage(message:string){
+// alert(message);
+// }
 
 
-
-showelcomeAlert(){
-  alert("Welcome to Angular");
-}
-
-showmessage(message:string){
-alert(message);
-}
 }
