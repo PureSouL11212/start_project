@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [DesignationComponent,RolesComponent,CommonModule],
   templateUrl: './master.component.html',
-  styleUrl: './master.component.css'
+  styleUrls: ['./master.component.css']
 })
 export class MasterComponent {
  currentComponent:string = "Roles";
