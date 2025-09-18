@@ -1,77 +1,11 @@
-<!-- <p>roles works!</p>
-<p>{{firstname}}</p>
-<p>{{lastname}}</p> -->
-<!-- <p>{{age}}</p>
-<p>{{isStudent}}</p>
-<p>{{isEmployee}}</p>
-<p>{{isAdmin}}</p>
-<p>{{isSuperAdmin}}</p>
-<p>{{isUser}}</p>
-
-<button class="btn btn-primary" (click)="isStudent = !isStudent">Toggle Student</button>
-<button class="btn btn-primary" (click)="isEmployee = !isEmployee">Toggle Employee</button>
-<button class="btn btn-primary" (click)="isAdmin = !isAdmin">Toggle Admin</button>
-<button class="btn btn-primary" (click)="isSuperAdmin = !isSuperAdmin">Toggle Super Admin</button>
-<button class="btn btn-primary" (click)="isUser = !isUser">Toggle User</button>
-
-<p>{{isStudent}}</p>
-<p>{{isEmployee}}</p>
-<p>{{isAdmin}}</p>
-<p>{{isSuperAdmin}}</p>
-<p>{{isUser}}</p> -->
-<!-- <div class="row">
-    <div class="col-3">
-        <p>{{firstname}}</p>
-
-    </div>
-    <div class="col-3">
-        <p>{{lastname}}</p>
-    </div>
-    <div class="col-3">
-        <p> {{age}}</p>
-    </div>
-</div>
-
 <div class="row">
 
-    <div class="col-3">
-        <input type="text" [value]="firstname" class="form-control">
+    <div class="col-4">
+        <ul>
+            <li *ngFor="let item of roleList">
+              {{item.roleId}}
+            </li>
+          </ul>
+          
     </div>
-    <div class="row">
-
-        <div class="col-3">
-            <input type="text" [(ngModel)]="firstname">
-        </div>
-        <div class="col-3">
-            <select [(ngModel)]="selectstate">
-<option value="Maharashtra">Maharashtra</option>
-<option value="Delhi">Delhi</option>
-<option value="Karnataka">Karnataka</option>
-<option value="Tamil Nadu">Tamil Nadu</option>
-<option value="Andhra Pradesh">Andhra Pradesh</option>
-<option value="Kerala">Kerala</option>
-<option value="Punjab">Punjab</option>
-
-            </select>
-        </div>
-        <div class="row">
-            {{selectstate}}
-        </div>
-    </div>
-
-<div class="row">
-<div class="col-3">
-
-    <button class="btn btn-success" (click)="showelcomeAlert()">Show Welcome Alert</button>
 </div>
-<div class="col-3">
-
-    <button class="btn btn-success" (click)="showmessage('Hello Angular')">Show angular message</button>
-</div>
-
-<div class="col-3">
-
-    <button class="btn btn-success" (click)="showmessage('Hello dot net message')">Show dotnet message</button>
-</div>
-</div>
-</div> -->

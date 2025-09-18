@@ -1,31 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { IRole } from '../model/interface/role';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-roles',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule, HttpClientModule],
   templateUrl: './roles.component.html',
-  styleUrl: './roles.component.css'
+  styleUrls: ['./roles.component.css']
 })
-export class RolesComponent {
-// firstname:string = "John";
-// lastname:string = "Doe";
-// age:number = 20;
-// isStudent:boolean = true;
-// isEmployee:boolean = false;
-// isAdmin:boolean = false;
-// isSuperAdmin:boolean = false;
-// isUser:boolean = false;
-// selectstate:string = '';
+export class RolesComponent implements OnInit {
+  roleList: IRole[] = [];
+  http = inject(HttpClient);
 
-// showelcomeAlert(){
-//   alert("Welcome to Angular");
-// }
+  ngOnInit(): void {
+    this.getAllRoles();
+  }
 
-// showmessage(message:string){
-// alert(message);
-// }
-
-
+  getAllRoles() {
+    this.http.get("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles")
+      .subscribe((res: any) => {
+       
+        this.roleList = res.data; // handle both cases
+      });
+  }
+  
 }
