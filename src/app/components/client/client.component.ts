@@ -1,12 +1,44 @@
-import { Component } from '@angular/core';
-
+import { Component,OnInit } from '@angular/core';
+import { Client } from '../model/class/client';
+import { ClientService } from '../../services/client.service';
+import { inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { APIResponseModel } from '../model/interface/role';
 @Component({
   selector: 'app-client',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './client.component.html',
   styleUrl: './client.component.css'
 })
-export class ClientComponent {
+export class ClientComponent implements OnInit {
 
-}
+  clientObj: Client = new Client();
+  clientList: Client[] = [];
+
+  clientService =inject(ClientService);
+  
+  ngOnInit(): void {
+this.loadClient();
+  }
+
+
+
+  loadClient(){
+this.clientService.getAllClients().subscribe((res:APIResponseModel)=>{
+  this.clientList = res.data;
+});
+
+  }
+  onsaveclient() {
+    debugger;
+    this.clientService.addUpdate(this.clientObj).subscribe((res: APIResponseModel) => {
+      if (res.result) {
+        alert("Client saved successfully");
+        this.loadClient();
+      } else {
+        alert(res.message);
+      }
+    });
+  }
+}  

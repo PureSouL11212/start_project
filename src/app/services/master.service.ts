@@ -11,7 +11,7 @@ export class MasterService {
 
 
   getDesignations():Observable<APIResponseModel>{
-    return this.http.get<APIResponseModel>("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles");
+    return this.http.get<APIResponseModel>("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllDesignations");
   }
   // getDesignations():Observable<APIResponseModel>{
   // return this.http.get<APIResponseModel>("https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllDesignations");
