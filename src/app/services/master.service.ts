@@ -23,3 +23,4 @@ export class MasterService {
   // }
   // https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllRoles
 }
+   

@@ -14,13 +14,16 @@ import { CommonModule } from '@angular/common';
 export class DesignationComponent implements OnInit {
 
 designationList:IDesignation[]=[];
+isloader:boolean=true;
 masterservice=inject(MasterService);
 
 ngOnInit(): void {
     this.masterservice.getDesignations().subscribe((result:APIResponseModel)=>{
     this.designationList=result.data;
+    this.isloader=false;
   },error=>{
     alert("Error / network down")
+    this.isloader=false;
   })
 }
 

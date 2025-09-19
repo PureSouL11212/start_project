@@ -1,17 +1,34 @@
 <P>hi</P>
 <div class="row">
-    @for(item of designationList; track $index){
-        <div class="col-3">
-            <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <p class="card-text">Some example text. Some example text.</p>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
-                </div>
-              </div>
-        </div>
-    }
+
+@if(isloader == true){
+  
+  <div class="cpl-12 text-center">
+    <div class="spinner-border text-muted"></div>
+    <div class="spinner-border text-primary"></div>
+    <div class="spinner-border text-success"></div>  </div>
+} @else{
+
+  @for(item of designationList; track $index){
+    <div class="col-3">
+        <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Card title</h4>
+              <p class="card-text">Some example text. Some example text.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+    </div>
+}
+}
+
+
+
+
+
+
+
 </div>
 
 
